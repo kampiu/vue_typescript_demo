@@ -5,27 +5,28 @@ import router from "@/router"
 import store from "@/store"
 import "@/registerServiceWorker"
 import "@/utils/iview"
-import global from "@/plugins/global"
 import "@/plugins/web-ui"
+import global from "@/plugins/global"
 import VueMeta from "vue-meta"
+import i18n from "@/i18n"
 
 Vue.use(global)
 Vue.use(VueMeta)
-
 
 Vue.config.productionTip = false
 
 new Vue({
 	router,
 	store,
-	// metaInfo() {
-	// 	return {
-	// 		title: 'SEO标题',
-	// 		meta: [ {
-	// 			title: 'keyword',
-	// 			content: 'SEO 关键字'
-	// 		} ]
-	// 	};
-	// },
+	i18n,
+	metaInfo() {
+		return {
+			title: "SEO标题",
+			meta: [ {
+				name: "keyword",
+				content: "SEO 关键字"
+			} ]
+		}
+	},
 	render: (h) => h(App),
 }).$mount("#app")
