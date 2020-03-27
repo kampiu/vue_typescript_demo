@@ -1,27 +1,43 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Vue from "vue"
+import Router, { Route, RouteConfig } from "vue-router"
+import TabBarRouter from "./Modules/TabBarRouter"
 
-Vue.use(VueRouter);
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
-];
+const R = (name: string) => () => import(`@/views/${ name }.vue`)
 
-const router = new VueRouter({
-  routes,
-});
+const Route: RouteConfig[] = [ {
+	name: "TabBarView",
+	path: "/",
+	component: R("TabBarView/Index"),
+	redirect: "/home",
+	children: TabBarRouter
+} ]
 
-export default router;
+
+const createRouter = () => new Router({
+	mode: "history",
+	routes: Route
+})
+
+const router = createRouter()
+
+router.beforeEach((to: Route, from: Route, next: any): void => {
+	next()
+})
+
+router.afterEach((to: Route, from: Route) => {
+
+})
+
+router.onError((error: Error) => {
+
+})
+
+export const resetRouter = () => {
+	const newRouter = createRouter();
+	(router as any).matcher = (newRouter as any).matcher // reset router
+}
+
+
+export default router
