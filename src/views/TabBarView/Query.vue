@@ -1,6 +1,6 @@
 <template>
 	<div class="query-layout">
-		Query
+
 <!--		<div class="language-box">-->
 <!--			<div class="tab-menu">-->
 <!--				<span v-for="item in langs" :key="item.id" @click="changeLang(item.lang)">{{ item.title }}</span>-->
@@ -38,7 +38,7 @@
 	import { Component, Vue } from "vue-property-decorator"
 	import { namespace } from "vuex-class"
 
-	const HomeModule = namespace("home")
+	const CommonModule = namespace("common")
 
 	@Component
 	export default class Query extends Vue {

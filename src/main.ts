@@ -14,6 +14,7 @@ Vue.use(global)
 Vue.use(VueMeta)
 
 Vue.config.productionTip = false
+require("@/mock")
 
 new Vue({
 	router,

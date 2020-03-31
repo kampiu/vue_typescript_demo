@@ -16,7 +16,7 @@
 <style lang="less">
 	#app-view{
 		width: 100vw;
-		height: 1200vh;
+		height: 100vh;
 		display:flex;
 	}
 	// < 480
@@ -30,7 +30,7 @@
 	// > 480
 	@media (min-width: 480px) {
 		#app-view{
-			flex-direction: row;
+			flex-direction: column;
 			padding-left: 56px;
 			padding-bottom: 0;
 		}

@@ -131,7 +131,6 @@
 			/*height: 44px;*/
 			width: 56px;
 			height: 100vh;
-			border-radius: 8px;
 			position: fixed;
 			left: 0;
 			top: 50%;

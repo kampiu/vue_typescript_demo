@@ -4,7 +4,7 @@
  * @LastEditTime: 2019-12-04 15:04:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \bkqw_crm\src\service\index.ts
+ * @FilePath: \bkqw_crm\src\service\indexs.ts
  */
 import request from "@/plugins/axios"
 import { IService, IServices } from "@/types/service"
